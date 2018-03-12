@@ -27,6 +27,8 @@ notification that hold expired will be shown to the user.
 	
 	./gradlew run
 	
+	Note: executions will wait (30 sec) in order to test hold expiration.
+	
 4.	To run tests
 
 	./gradlew test  

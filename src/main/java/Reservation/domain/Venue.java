@@ -9,7 +9,7 @@ public class Venue implements Iterable<Seat>{
 
     public List<Seat> seats=new ArrayList<Seat>();
 
-    Venue(List<Seat> seats){
+    public Venue(List<Seat> seats){
         this.seats = seats;
 
     }

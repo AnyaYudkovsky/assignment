@@ -15,10 +15,36 @@ public class TicketServiceImpl implements TicketService{
 
     private Venue venue;
     private List<SeatHold> holds;
+    private long holdTime;
 
     public TicketServiceImpl (Venue venue){
         this.venue = venue;
         this.holds = new ArrayList<SeatHold>();
+        this.holdTime = 30;
+    }
+
+    public Venue getVenue() {
+        return venue;
+    }
+
+    public void setVenue(Venue venue) {
+        this.venue = venue;
+    }
+
+    public List<SeatHold> getHolds() {
+        return holds;
+    }
+
+    public void setHolds(List<SeatHold> holds) {
+        this.holds = holds;
+    }
+
+    public long getHoldTime() {
+        return holdTime;
+    }
+
+    public void setHoldTime(long holdTime) {
+        this.holdTime = holdTime;
     }
 
     @Override
@@ -87,7 +113,7 @@ public class TicketServiceImpl implements TicketService{
             Iterator<SeatHold> holdIterator = holds.iterator();
             while (holdIterator.hasNext()) {
                SeatHold seatHold= holdIterator.next();
-               if (getElapsedTime(seatHold.getCreatedHold()) > 30){
+               if (getElapsedTime(seatHold.getCreatedHold()) > this.holdTime){
                    Iterator<Seat> seatIterator = seatHold.getSeatsOnHold().iterator();
                    while (seatIterator.hasNext()) {
                        Seat seat = this.venue.findSeat(seatIterator.next());
