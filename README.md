@@ -1,5 +1,5 @@
 # Ticket Service
-This is very simple and quick implementation of a ticket service that allows to discovery, hold, 
+This is very simple and quick implementation of a ticket service that allows to discover, hold, 
 and reserve seats within a venue.
 
 
@@ -11,7 +11,7 @@ notification that hold expired will be shown to the user.
 5. If users takes advantage of the hold and reserves seats before the hold expired seats status are changed from ONHOLD
  to RESERVED and those seats won't be available for the next user. 
 
-Building Project
+# Building Project
 
 1.	Clone the project
 	
